@@ -23,19 +23,6 @@ CSS puro (estilização sem frameworks)
 ✔ IDs únicos gerados automaticamente
 ✔ Layout responsivo e moderno
 
-🧠 Arquitetura
-
-O projeto está dividido em componentes:
-
-src/
- ├── App.jsx            # Lógica principal e estado global
- ├── assets/
- │     └── components/
- │           ├── AddTask.jsx    # Formulário de criação de tarefas
- │           └── Tasks.jsx      # Lista de tarefas com ações
- ├── App.css
- ├── index.jsx
-
 🛠️ Como rodar o projeto
 # Clone o repositório
 git clone https://github.com/SEUUSUARIO/Gerenciador-de-tarefas---REACT.git
