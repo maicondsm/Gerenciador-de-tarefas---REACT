@@ -1,0 +1,248 @@
+:root {
+  --colorPrincipal: #ff4b4b;
+  --colorPrincipalSoft: #ff4b4b21;
+  --bgBody: #050509;
+  --bgCard: #11111a;
+  --bgCardSoft: #181824;
+  --textPrimary: #f5f5f5;
+  --textSecondary: #b3b3b3;
+  --borderSoft: #272738;
+}
+
+/* ===== BASE ===== */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top, #1f1f3a 0, #050509 55%);
+  color: var(--textPrimary);
+}
+
+/* root do React */
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== CONTAINER GERAL ===== */
+
+#container {
+  width: 100%;
+  max-width: 520px;
+}
+
+#div2 {
+  background: linear-gradient(135deg, #141421, #0b0b12);
+  border-radius: 8px;
+  padding: 1.8rem 1.6rem 2rem;
+  box-shadow: 0 20px 45px #000000b3;
+  border: 1px solid #ffffff0d;
+}
+
+/* ===== TÍTULO ===== */
+
+#title-gt {
+  margin: 0 0 1.4rem;
+  font-size: 1.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--textPrimary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+#title-gt::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--colorPrincipal);
+}
+
+#title-gt::after {
+  content: "";
+  width: 28px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--colorPrincipal);
+}
+/*===== ADICIONAR TAREFA ===== */
+
+.div-addtask {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* 🔥 centraliza TUDO no meio */
+  justify-content: center;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+/* inputs */
+.addtask {
+  width: 80%;
+  padding: 0.8rem 1rem;
+
+  border-radius: 8px;
+  border: 1px solid var(--borderSoft);
+
+  background: var(--bgCard);
+  color: var(--textPrimary);
+  font-size: 0.9rem;
+
+  outline: none;
+}
+
+.addtask:focus {
+  border-color: var(--colorPrincipal);
+}
+
+/* botão */
+.addbtn {
+  width: 85%;
+  border-radius: 8px;
+
+  background: var(--colorPrincipal);
+  border: 1px solid var(--borderSoft);
+  color: var(--textPrimary);
+  cursor: pointer;
+}
+
+.addbtn:hover {
+  background: #ff3737;
+  transform: translateY(-1px);
+}
+
+.addbtn:active {
+  transform: translateY(0);
+}
+
+
+/* ===== LISTA DE TAREFAS ===== */
+
+ul {
+  padding: 0;
+  margin: 1.2rem 0 0;
+}
+
+ul > li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  background: linear-gradient(135deg, var(--bgCardSoft), #10101a);
+  border-radius: 12px;
+  padding: 0.9rem 0.95rem;
+  margin: 0.7rem 0;
+
+  border: 1px solid var(--borderSoft);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+
+  transition:
+    transform 0.15s ease-out,
+    box-shadow 0.15s ease-out,
+    border-color 0.15s ease-out,
+    background 0.15s ease-out;
+}
+
+ul > li:hover {
+  transform: translateY(-2px);
+  border-color: var(--colorPrincipalSoft);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* conteúdo da tarefa (texto à esquerda) */
+.tasks {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  
+}
+
+.tasks.Completed {
+  text-decoration: line-through;
+}
+
+.tasks .title {
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--textPrimary);
+}
+
+.tasks .description {
+  font-size: 0.82rem;
+  color: var(--textSecondary);
+}
+
+/* ===== BOTÕES ===== */
+
+button {
+  border-radius:6px;
+  border: 1px solid transparent;
+  padding: 11px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: #1f1f30;
+  color: var(--textPrimary);
+}
+
+button:hover {
+  background: var(--colorPrincipal);
+  border-color: var(--colorPrincipal);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+  transform: translateY(-1px);
+}
+
+/* botão principal de adicionar tarefa */
+button.tasks {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0.4rem;
+  background: var(--colorPrincipal);
+  box-shadow: 0 12px 30px rgba(255, 75, 75, 0.35);
+}
+
+button.tasks:hover {
+  background: #ff3737;
+}
+
+/* botão de detalhes / ícone */
+button.details {
+  width: 44px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #1e1e30;
+  border-radius: 6px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.65);
+}
+
+button.details:hover {
+  background: var(--colorPrincipal);
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media (max-width: 520px) {
+  #div2 {
+    padding: 1.4rem 1.1rem 1.7rem;
+  }
+
+  #title-gt {
+    font-size: 1.4rem;
+  }
+
+  ul > li {
+    padding: 0.85rem 0.85rem;
+  }
+}
